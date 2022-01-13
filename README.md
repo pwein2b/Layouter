@@ -21,17 +21,17 @@ Werden durch Namen unterschieden. Für eine Vorlage mit Namen `example` müssen 
 
 Sei `Inhalt` der Name unserer Übersichtsdatei. Wir führen zum Erzeugen der Seiten im Arbeitsverzeichnis die Befehle
 
-  mkdir out
-  rm out/*
-  ./Go.py Inhalt
+      mkdir out
+      rm out/*
+      ./Go.py Inhalt
   
 aus.
 
 Zum Erzeugen einer großen PDF-Datei aus diesen Seiten:
 
-  cd out
-  inkscape --batch-process --actions="export-type:pdf;export-do" Seite*.svg
-  pdfjam --outfile Alles.pdf Seite*.pdf
+      cd out
+      inkscape --batch-process --actions="export-type:pdf;export-do" Seite*.svg
+      pdfjam --outfile Alles.pdf Seite*.pdf
   
 Dauert eventuell eine Weile.
 
@@ -45,7 +45,7 @@ Kommentare werden mit `#` eingeleitet. Alle nicht-leeren Zeilen, die nicht nur a
 ### Inhalt erzeugen
 Es gibt verschiedene Inhaltstypen. Die Syntax lautet
 
-  (Inhaltstyp) (Benötigte Argumente).
+      (Inhaltstyp) (Benötigte Argumente).
 
 
 ### Eingebaute Funktionen
@@ -54,10 +54,15 @@ Der Name der Funktion wird mit einem `@` präfigiert.
 ### Makros
 Makros werden wie folgt definiert:
 
-  $ (name)= (n) (s)
+      $ (name)= (n) (s)
   
 Wobei (name) der Name des zu definierenden Makros, (n) die Anzahl der Argumente und (s) der Text ist, in welchem die Substitution stattfinden soll. In (s) wird `'i'` durch das i-te Argument ersetzt.
   
 Aufruf eines Makros:
-  $ (name) (argumente)
+      $ (name) (argumente)
   
+## Benötigte Pakete (nicht erschöpfende Aufzählung)
+ - inkscape
+ - python3
+ - python3-gi-cairo
+ - python3-libxml2
